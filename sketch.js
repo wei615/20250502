@@ -15,14 +15,18 @@ function setup() {
 
 function draw() {
   background('#0d1b2a'); // 確保背景顏色維持一致
-  translate(width / 2, height / 2); // 將原點移到畫布中心
-  scale(-1, 1); // 水平翻轉影像
 
-  // 顯示攝影機影像
-  image(capture, -capture.width / 2, -capture.height / 2);
+  // 確保攝影機影像已準備好
+  if (capture.loadedmetadata) {
+    translate(width / 2, height / 2); // 將原點移到畫布中心
+    scale(-1, 1); // 水平翻轉影像
 
-  // 顯示 overlayGraphics 圖形在視訊畫面上方
-  image(overlayGraphics, -capture.width / 2, -capture.height / 2);
+    // 顯示攝影機影像
+    image(capture, -capture.width / 2, -capture.height / 2);
+
+    // 顯示 overlayGraphics 圖形在視訊畫面上方
+    image(overlayGraphics, -capture.width / 2, -capture.height / 2);
+  }
 }
 
 function windowResized() {
