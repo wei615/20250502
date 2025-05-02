@@ -45,7 +45,7 @@ function drawOverlayGraphics() {
   // 每隔 20 單位繪製圓
   for (let y = 0; y < overlayGraphics.height; y += 20) {
     for (let x = 0; x < overlayGraphics.width; x += 20) {
-      // 從 capture 中取得相對應位置的顏色
+      // 從 capture 中取得相對位置的顏色
       let col = capture.get(x, y);
       overlayGraphics.fill(col); // 設定圓的顏色
       overlayGraphics.ellipse(x + 10, y + 10, 15, 15); // 繪製圓，置於單位格中心
